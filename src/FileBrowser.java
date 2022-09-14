@@ -174,7 +174,7 @@ class FileBrowser {
                 @Override
                 public void valueChanged(ListSelectionEvent lse) {
                      row = table.getSelectionModel().getLeadSelectionIndex();
-                    //setFileDetails( ((FileTableModel)table.getModel()).getFile(row) );
+                     setFileDetails( ((FileTableModel)table.getModel()).getFile(row) );
 
 
                 }
@@ -571,23 +571,23 @@ class FileBrowser {
 
     private void setFileDetails(File file) {
         currentFile = file;
-        Icon icon = fileSystemView.getSystemIcon(file);
-        fileName.setIcon(icon);
-        fileName.setText(fileSystemView.getSystemDisplayName(file));
-        path.setText(file.getPath());
-        date.setText(new Date(file.lastModified()).toString());
-        size.setText(file.length() + " bytes");
+//         Icon icon = fileSystemView.getSystemIcon(file);
+//         fileName.setIcon(icon);
+//         fileName.setText(fileSystemView.getSystemDisplayName(file));
+//         path.setText(file.getPath());
+//         date.setText(new Date(file.lastModified()).toString());
+//         size.setText(file.length() + " bytes");
   
 
-        JFrame f = (JFrame)gui.getTopLevelAncestor();
-        if (f!=null) {
-            f.setTitle(
-                    APP_TITLE +
-                            " :: " +
-                            fileSystemView.getSystemDisplayName(file) );
-        }
+//         JFrame f = (JFrame)gui.getTopLevelAncestor();
+//         if (f!=null) {
+//             f.setTitle(
+//                     APP_TITLE +
+//                             " :: " +
+//                             fileSystemView.getSystemDisplayName(file) );
+//         }
 
-        gui.repaint();
+//         gui.repaint();
     }
 
     public static void main(String[] args) {
